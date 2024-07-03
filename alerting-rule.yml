@@ -1,10 +1,10 @@
 groups:
-- name: server_is_down
+- name: server_is_not_available
   rules:
-  - alert: server_is_down
-    expr: up == 0
+  - alert: server_is_not_available
+    expr: probe_success == 0
     for: 1m
     labels:
       severity: page
     annotations:
-      summary: Server is down.
+      summary: Server is not available.
